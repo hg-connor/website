@@ -7,11 +7,12 @@ fi
 
 domains=(hemme.games www.hemme.games)
 rsa_key_size=4096
-data_path="./data/certbot/conf/live"
+data_path="./data/certbot"
 email="" # Adding a valid address is strongly recommended
 staging=0 # Set to 1 if you're testing your setup to avoid hitting request limits
 
-if [ ${#data_path[@]} -gt 0 ]; then 
+if [ "$(ls -A ./data/certbot/conf/live)" ]; then 
+  echo "Exiting because there is data in the live folder already"
   exit
 fi
 
