@@ -9,7 +9,7 @@ services:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
       - ./data/nginx/log:/var/log/nginx
-      - ../html:/usr/share/nginx/html
+      - /hemme/website/html:/usr/share/nginx/html
     ports:
       - "80:80"
       - "443:443"
